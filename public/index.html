@@ -4,54 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mutalia - Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="MUTALIA.png" type="image/x-icon">
 </head>
-<body>
-    <header>
-        <nav>
+<body class="landing-page">
+    <div class="landing-bg-orb orb-1" aria-hidden="true"></div>
+    <div class="landing-bg-orb orb-2" aria-hidden="true"></div>
+    <div class="landing-noise" aria-hidden="true"></div>
+
+    <header class="landing-header">
+        <nav class="landing-nav">
             <div class="logo-container">
                 <span class="brand-name">Mutalia</span>
             </div>
             <div class="nav-buttons">
                 <a href="#features" class="nav-button">Features</a>
                 <a href="#about" class="nav-button">About</a>
-                <a href="login.html" class="nav-button login-button">Login</a>
-                <a href="sign-up.html" class="nav-button signup-button">Sign Up</a>
+                <a href="#contact" class="nav-button">Contact</a>
+                <a href="login.html" class="nav-button login-button" id="login-button">Login</a>
+                <a href="sign-up.html" class="nav-button signup-button" id="signup-button">Sign Up</a>
             </div>
         </nav>
-        <div class="header-content">
-            <img src="MUTALIA.svg" alt="Mutalia Logo" class="logo">
-            <h1>Welcome to Mutalia</h1>
-            <p>Your AI-Powered Study Assistant</p>
+
+        <div class="hero-grid">
+            <div class="hero-copy reveal">
+                <p class="hero-kicker">AI-POWERED STUDY PLATFORM</p>
+                <h1>Build better study habits with structure, focus, and flow.</h1>
+                <p class="hero-subtext">
+                    Mutalia brings notes, reading material, and guided learning tools into one focused workspace so students can
+                    spend less time managing chaos and more time understanding concepts.
+                </p>
+                <div class="hero-actions">
+                    <a href="sign-up.html" class="hero-cta-primary">Start for Free</a>
+                    <a href="login.html" class="hero-cta-secondary">Open Dashboard</a>
+                </div>
+                <div class="hero-badges">
+                    <span>Secure authentication</span>
+                    <span>Responsive experience</span>
+                    <span>Study-first design</span>
+                </div>
+            </div>
+
+            <div class="hero-panel reveal">
+                <img src="MUTALIA.svg" alt="Mutalia Logo" class="logo">
+                <h3>What Mutalia gives you</h3>
+                <ul>
+                    <li>One workspace for documents and notes</li>
+                    <li>AI-assisted study conversations</li>
+                    <li>Clean interface for focused reading</li>
+                    <li>Future-ready community learning tools</li>
+                </ul>
+            </div>
         </div>
     </header>
-    
-    <section id="features">
-        <h2>Features</h2>
-        <div class="feature-container">
-            <div class="feature">
-                <h3>AI-Powered Chatbot</h3>
-                <p>Get instant assistance and answers tailored to your study needs. Our AI chatbot is available 24/7 to help you with your queries.</p>
-            </div>
-            <div class="feature">
-                <h3>Document Upload & Note-Taking</h3>
-                <p>Easily upload study materials and create well-organized notes. Keep all your resources in one place for quick access.</p>
-            </div>
-            <div class="feature">
-                <h3>Collaborative Learning</h3>
-                <p>Share notes and engage in discussions with peers for enhanced learning. Collaborate in real-time to achieve better results.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Mutalia is dedicated to enhancing students' learning experiences with AI-driven tools. Our platform helps you streamline your studies through intelligent assistance and effective note management.</p>
-    </section>
 
-    <footer>
-        <h3>Contact Us</h3>
+    <main>
+        <section id="features" class="landing-section reveal">
+            <div class="section-head">
+                <p class="section-kicker">Core Experience</p>
+                <h2>Designed to support how students actually learn</h2>
+            </div>
+            <div class="feature-grid">
+                <article class="feature">
+                    <h3>Guided Study Assistant</h3>
+                    <p>Ask questions, break down concepts, and stay in momentum with contextual help inside your study flow.</p>
+                </article>
+                <article class="feature">
+                    <h3>Notes and Materials Together</h3>
+                    <p>Keep your reading material and personal notes in one place so revision sessions stay organized and fast.</p>
+                </article>
+                <article class="feature">
+                    <h3>Collaboration Ready</h3>
+                    <p>Share ideas and discuss topics with peers through a future-ready interaction layer built for learning groups.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="landing-section about-grid reveal">
+            <div>
+                <p class="section-kicker">About Mutalia</p>
+                <h2>A focused environment for modern study routines</h2>
+                <p>
+                    Mutalia is built for students who want clarity, not clutter. The goal is simple: make studying feel structured,
+                    practical, and easier to sustain over time.
+                </p>
+                <p>
+                    From authentication and dashboard foundations to upcoming content and collaboration systems, Mutalia is evolving
+                    into a complete study platform.
+                </p>
+            </div>
+            <div class="about-card">
+                <h3>Why students choose it</h3>
+                <p>Minimal distractions, clear organization, and tools that support real academic workflows.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="landing-footer">
+        <h3>Contact</h3>
         <p>Email: support@mutalia.com</p>
     </footer>
 
@@ -65,8 +118,8 @@
                 
                 if (response.ok) {
                     // Update login/signup buttons if user is logged in
-                    const loginButton = document.querySelector('.login-button');
-                    const signupButton = document.querySelector('.signup-button');
+                    const loginButton = document.getElementById('login-button');
+                    const signupButton = document.getElementById('signup-button');
                     
                     if (loginButton) {
                         loginButton.textContent = 'Dashboard';
@@ -85,6 +138,15 @@
             } catch (error) {
                 console.error('Error checking authentication:', error);
             }
+
+            // Staggered reveal animation on first load
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach((el, index) => {
+                el.style.setProperty('--delay', `${index * 120}ms`);
+                requestAnimationFrame(() => {
+                    el.classList.add('reveal-in');
+                });
+            });
         });
 
         // Logout function
