@@ -14,19 +14,11 @@ It combines:
 ### Implemented
 
 - User sign up and login
-- Secure JWT session in HTTP-only cookies
-- Logout and protected current-user endpoint
-- Forgot password flow (token generation + email)
-- Reset password flow with token verification
-- Static multi-page frontend (landing, auth pages, dashboard)
 - Responsive UI with modernized landing page design
-
-### In Progress / Placeholder UI
-
-- Documents upload workflow (UI shell exists)
-- Notes creation workflow (UI shell exists)
-- Discussion forum workflow (UI shell exists)
-- AI chatbot integration (currently mock responses)
+- Documents upload
+- Notes creation 
+- Discussion forum
+- AI chatbot integration
 
 ## Tech Stack
 
